@@ -1,0 +1,10 @@
+```yaml
+title: DNS Beaconing Detection
+logsource:
+  product: zeek
+detection:
+  selection:
+    dns.qry.name|contains: '.xyz'
+    dns.rtt: '<1s'
+  condition: selection
+level: high
